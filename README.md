@@ -1,29 +1,23 @@
-# Single-spa app with React and Angular
+# Angular and React Micro Frontend
 
-## Install the npm packages
-Navigate to the root-config, react-app, and angular-app folders and run the command
-```js
-$ npm install
-```
 
-## Run the application
+Angular and React Micro Frontend managed from a single root project
 
-- Navigate to the angular-app folder and run the below command
-  ```js
-  $ npm run serve:single-spa:angular-app
-  ```
-- Navigate to the react-app folder and run the below command
-  ```js
-  $ npm start
-  ```
-- Navigate to the root-config folder and run the below command
-  ```js
-  $ npm start
-  ```
-  
-  In the browser open the application at http://localhost:9000
-  
-  Now in the top navigation bar click on **React**, you will be routed to the React app, on click of **Angular** you will be redirected to angular app
-  
-  **http://localhost:9000/react** -> React App
-  **http://localhost:9000/angular/** -> Angular App
+---
+
+## Setup localhost
+
+
+cd react-ng-spa-app
+
+npm i
+
+npm start
+
+All microfrontends can be viewed from the root project at http://localhost:9000
+
+## Deployment
+
+From the react-ng-spa-app folder run "npm run build" 
+
+This will create a deployable dist folder in each of the micro apps which are individually deployable. For the initial deployment all contents in each of the dist folders should be deployed.
