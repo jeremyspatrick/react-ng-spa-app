@@ -37,8 +37,7 @@
               "path": "extra-webpack.config.js",
               "libraryName": "angular-app",
               "libraryTarget": "umd"
-            },
-            "deployUrl": "http://localhost:4200/"
+            }
           },
           "configurations": {
             "production": {
@@ -78,10 +77,13 @@
           "builder": "@angular-builders/custom-webpack:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular-app:build:production"
+              "browserTarget": "angular-app:build:production",
+              "publicHost":"http://localhost:4200"
+
             },
             "development": {
-              "browserTarget": "angular-app:build:development"
+              "browserTarget": "angular-app:build:development",
+              "publicHost":"http://localhost:4200"
             }
           },
           "defaultConfiguration": "development"

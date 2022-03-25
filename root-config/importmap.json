@@ -1,0 +1,7 @@
+{
+    "imports": {
+      "@org1/root-config": "https//my-public-deployment.com/org1-root-config.js",
+       "@org1/react-app": "https//my-public-deployment.com/react-app/org1-react-app.js",
+       "angular-app": "https//my-public-deployment.com/angular-app/main.js"
+    }
+  }

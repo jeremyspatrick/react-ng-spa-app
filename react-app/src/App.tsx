@@ -1,6 +1,6 @@
 import React from "react";
 
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 export default function App({ name }) {
   return (
@@ -21,19 +21,11 @@ export default function App({ name }) {
           </ul>
         </nav>
 
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-        <Switch>
-          <Route path="/react/about">
-            <About />
-          </Route>
-          <Route path="/react/users">
-            <Users />
-          </Route>
-          <Route path="/react">
-            <Home />
-          </Route>
-        </Switch>
+        <Routes>
+          <Route path="/react/about" element={<About/>} />
+          <Route path="/react/users" element={<Users/>} />
+          <Route path="/react" element={<Home/>} />
+        </Routes>
       </div>
     </Router>
   );

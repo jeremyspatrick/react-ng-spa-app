@@ -1,0 +1,33 @@
+{
+  "name": "all",
+  "scripts": {
+    "start": "concurrently -r -k -g \"npm run root-config\" \"npm run angular-app\" \"npm run react-app\" ",
+    "msg": "node -e \"console.log('script started') \"",
+    "angular-app": "npm start --prefix angular-app",
+    "react-app": "npm start --prefix react-app",
+    "root-config": "npm start --prefix root-config",
+    "angular-app-i": "npm i --prefix angular-app",
+    "react-app-i": "npm i  --prefix react-app",
+    "root-config-i": "npm i  --prefix root-config",
+    "angular-app-build": "npm build --prefix angular-app",
+    "react-app-build": "npm build --prefix react-app",
+    "root-config-build": "npm build --prefix root-config",
+    "postinstall": "concurrently -r \"npm run root-config-i\" \"npm run react-app-i\" \"npm run angular-app-i\" ",
+    "npm-i": "npm install --reporter append-only",
+    "build": "concurrently -r \"npm run root-config-build\" \"npm run react-app-build\" \"npm run angular-app-build\" "
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged && concurrently npm:test npm:lint"
+    }
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "eslint": "^8.11.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.4",
+    "prettier": "^2.6.0",
+    "pretty-quick": "^3.1.3"
+  }
+}
